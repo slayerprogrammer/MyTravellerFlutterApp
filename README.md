@@ -1,2 +1,2 @@
-# KKU-IEEE-Flutter-101
- KKU IEEE Flutter 101 eğitiminde geliştirilen kodlar
+# Flutter-101
+ Flutter 101 Gezi Rehberi Uygulama
