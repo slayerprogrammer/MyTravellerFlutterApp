@@ -20,18 +20,24 @@ class _SettingsPageState extends State<SettingsPage> {
         // backgroundColor: mainColor,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Text('Ayarlar'),
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Text(
+            'Ayarlar',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         body: Container(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
+                Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Bildirimler'),
                     Switch(
+                      activeColor: Colors.orange,
                       value: isNotification,
                       onChanged: (value) {
                         setState(() {
@@ -43,11 +49,13 @@ class _SettingsPageState extends State<SettingsPage> {
                     )
                   ],
                 ),
+                Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Ses'),
                     Switch(
+                      activeColor: Colors.orange,
                       value: isVoice,
                       onChanged: (value) {
                         setState(() {
@@ -57,18 +65,23 @@ class _SettingsPageState extends State<SettingsPage> {
                     )
                   ],
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Tema modu'),
-                    ThemeModeSelector(
-                      height: 25,
-                      onChanged: (mode) {
-                        ThemeModeManager.of(context).themeMode = mode;
-                      },
-                    )
-                  ],
-                )
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Tema modu'),
+                      ThemeModeSelector(
+                        height: 25,
+                        onChanged: (mode) {
+                          ThemeModeManager.of(context).themeMode = mode;
+                        },
+                      )
+                    ],
+                  ),
+                ),
+                Divider()
               ],
             ),
           ),
